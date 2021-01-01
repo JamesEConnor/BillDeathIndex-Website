@@ -1,0 +1,7 @@
+{
+    "state_ny": {
+        "name": "New York State Senate",
+        "logo": "nysenate.png",
+        "file": "states/ny.json"
+    }
+}
