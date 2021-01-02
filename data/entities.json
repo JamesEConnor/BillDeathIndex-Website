@@ -2,6 +2,36 @@
     "state_ny": {
         "name": "New York State Senate",
         "logo": "nysenate.png",
-        "file": "states/ny.json"
+        "file": "states/ny.json",
+        "years": [
+            {
+                "year": 2009,
+                "session": "2009 - 2010"
+            },
+            {
+                "year": 2011,
+                "session": "2011 - 2012"
+            },
+            {
+                "year": 2013,
+                "session": "2013 - 2014"
+            },
+            {
+                "year": 2015,
+                "session": "2015 - 2016"
+            },
+            {
+                "year": 2017,
+                "session": "2017 - 2018"
+            },
+            {
+                "year": 2019,
+                "session": "2019 - 2020"
+            },
+            {
+                "year": 2021,
+                "session": "2021 - 2022"
+            }
+        ]
     }
 }
