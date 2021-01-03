@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Browse Bills - Bill Death Index</title>
+        
+        <link rel="icon" href="images/no-results.png">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="logo"><h1>Bill Death Index</h1></a>
+            <a href="browse.html?entity=state_ny"><p>New York State</p></a>
+            <a href="faq.html" class="faq"><p>FAQ</p></a>
+        </nav>
+        
+        <div id="main-content">
+            <div id="controls">
+                <img width=100>
+                <h2></h2>
+                
+                <div class="options">
+                    <h4>Bill Search</h4>
+                    <div class="search">
+                        <input type="text" placeholder="Enter print no.">
+                        <span class="search-button"><img src="images/search-icon.png"></span>
+                    </div>
+                    
+                    <h4>Session</h4>
+                    <ul id="year-controls" class="options">
+                    </ul>                    
+                    
+                    <h4>Death Level</h4>
+                    <ul class="options">
+                        <li data-key="deathLevel" data-value="1">Mostly Dead (Low)</li>
+                        <li data-key="deathLevel" data-value="2">Flatlining (Moderate)</li>
+                        <li data-key="deathLevel" data-value="3">Clinical (High)</li>
+                        <li data-key="deathLevel" data-value="4">Six Feet Under (Severe)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <ul>
+                <div class="no-results">
+                    <img width=100 src="images/no-results.png">
+                    
+                    <p>Sorry, no results found.</p>
+                </div>
+                
+                <div class="preloader">
+                    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+                        <path fill="black" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+                            <animateTransform 
+                             attributeName="transform" 
+                             attributeType="XML" 
+                             type="rotate"
+                             dur="1s" 
+                             from="0 50 50"
+                             to="360 50 50" 
+                             repeatCount="indefinite" />
+                        </path>
+                    </svg>
+                    
+                    <p>Note: there are approximately 30,000 bills in the system. Filters can take up to a minute to process.</p>
+                </div>
+                <button type="button"><p>Load Another 10 +</p></button>
+            </ul>
+        </div>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDwq2DQjL9-4DptwleDMeSMKOSosCtFgJ0",
+            authDomain: "bill-death-index.firebaseapp.com",
+            databaseURL: "https://bill-death-index-default-rtdb.firebaseio.com",
+            projectId: "bill-death-index",
+            storageBucket: "bill-death-index.appspot.com",
+            messagingSenderId: "832565078227",
+            appId: "1:832565078227:web:95c120b59faa9a9efb8c26"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        var database = firebase.database();
+    </script>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/load-firebase.js"></script>
+    <script src="js/browse.js"></script>
+</html>

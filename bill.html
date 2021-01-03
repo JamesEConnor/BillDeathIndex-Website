@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bill - Bill Death Index</title>
+        
+        <link rel="icon" href="images/no-results.png">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/bill.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="logo"><h1>Bill Death Index</h1></a>
+            <a href="browse.html?entity=state_ny"><p>New York State</p></a>
+            <a href="faq.html" class="faq"><p>FAQ</p></a>
+        </nav>
+        
+        <div id="main-content">
+            <div id="controls">
+                <img width=100>
+                <h2></h2>
+                
+                <div class="options">
+                    <button class="return" type="button">&#129044;&nbsp;&nbsp;Go Back</button>
+                </div>
+            </div>
+            
+            <div id="bill">
+                <h1 class="bill-result-title"></h1>
+                <ul class="bill-result-descriptors">
+                    <li class="bill-result-printno"><p></p></li>
+                    <li class="bill-result-deathlevel"><p></p></li>
+                    <li class="bill-result-year"><p></p></li>
+                </ul>
+                
+                <div class="bill-result-textparent">
+                    <pre class="bill-result-text"></pre>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDwq2DQjL9-4DptwleDMeSMKOSosCtFgJ0",
+            authDomain: "bill-death-index.firebaseapp.com",
+            databaseURL: "https://bill-death-index-default-rtdb.firebaseio.com",
+            projectId: "bill-death-index",
+            storageBucket: "bill-death-index.appspot.com",
+            messagingSenderId: "832565078227",
+            appId: "1:832565078227:web:95c120b59faa9a9efb8c26"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        var database = firebase.database();
+    </script>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/browse.js"></script>
+    <script src="js/bill.js"></script>
+</html>

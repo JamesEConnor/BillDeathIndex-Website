@@ -1,0 +1,484 @@
+html {
+    overflow-y: hidden;
+}
+
+
+
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    width: 100%;
+    height: 80px;
+    
+    background-color: #397bc9;
+    border-bottom: solid 3px #4f8edb;
+    
+    -webkit-box-shadow: 0px -2px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -2px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -2px 20px 0px rgba(0,0,0,0.75);
+    
+    z-index: 8;
+}
+
+nav a.logo {  
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+nav h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: white;
+}
+
+nav a {
+    position: relative;
+    margin-right: 20px;
+    
+    text-decoration: none;
+}
+
+nav a:hover {
+    cursor: pointer
+}
+
+nav a:not(.faq):after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    width: 0;
+    border-bottom: solid 2px white;
+    
+    transition: ease width 0.2s;
+}
+
+nav a:not(.faq):hover:after {
+    width: 100%;
+}
+
+nav a p {
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    color: white;
+}
+
+nav a.faq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 0 40px 0 20px;
+    padding: 5px;
+    
+    border: 3px solid white;
+    border-radius: 8px;
+    
+    transition: background-color ease 0.2s;
+}
+
+nav a.faq:hover {
+    background-color: white;
+}
+
+nav a.faq p {
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    
+    transition: color ease 0.2s;
+}
+
+nav a.faq:hover p {
+    color: #397bc9;
+}
+
+#main-content {
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    
+    display: inline-flex;
+    flex-direction: row;
+}
+
+
+
+#controls {
+    display: flex;
+    width: 225px;
+    height: calc(100vh - 80px - 40px);
+    padding: 20px;
+    margin-right: 50px;
+    
+    background-color: #e5e8ed;
+    
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    overflow-y: auto;
+}
+
+#controls h2 {
+    padding: 15px;
+    width: 150px;
+    max-width: 100%;
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    text-align: center;
+    
+    margin-bottom: 10px;
+}
+
+#controls img {
+    max-width: 100%;
+}
+
+
+
+
+#controls div.options {
+    display: inline-block;
+    width: 100%;
+}
+
+div.options h4 {
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    
+    margin: 10px 0;
+}
+
+div.options > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 20px auto;
+    padding: 10px;
+    
+    background-color: #eaeaea;
+    border: solid 1px #c1c1c1;
+    border-radius: 5px;
+    
+    transition: background-color ease 0.2s;
+}
+
+div.options > button:hover {
+    cursor: pointer;
+    background-color: #d4d4d4;
+}
+
+div.options > button p {
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    color: #797979;
+}
+
+div.options .search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+div.options input[type=text] {
+    width: calc(90% - 10px - 20px);
+    padding: 5px;
+    
+    font-family: "Roboto Slab", serif;
+    font-size: 14px;
+    color: black;
+    
+    background-color: white;
+    border: 1px solid gray;
+    outline: none;
+    
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+div.options .search-button {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    padding: 5px;
+    
+    background-color: gray;
+    border: 1px solid gray;
+    
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    transition: ease 0.2s;
+}
+
+div.options .search-button:hover {
+    cursor: pointer;
+    background-color: #393939;
+    border-color: #393939;
+}
+
+div.options .search-button img {
+    width: 100%;
+    user-select: none;
+}
+
+div.options ul.options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    width: 100%;
+}
+
+div.options ul.options li {
+    display: inline-block;
+    padding: 3px;
+    margin-bottom: 3px;
+    
+    border: 2px solid #2a62bc;
+    border-radius: 5px;
+    
+    font-family: "Arial", sans-serif;
+    font-size: 10px;
+    color: #2a62bc;
+    
+    transition: ease 0.2s;
+}
+
+div.options ul.options li:not(:last-of-type) {
+    margin-right: 3px;
+}
+
+div.options ul.options li:hover, div.options ul.options li.selected {
+    cursor: pointer;
+    background-color: #2a62bc;
+    color: white;
+}
+
+
+
+
+
+#main-content > ul {
+    display: inline-block;
+    width: calc(100% - 225px);
+    height: calc(100vh - 80px - 40px);
+    padding: 20px 0;
+    
+    overflow-y: auto;
+}
+
+.bill {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 140px;
+}
+
+.bill a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform ease 0.2s;
+}
+
+.bill a:hover {
+    transform: translateY(-5px);
+}
+
+.bill:not(:last-of-type) {
+    margin-bottom: 30px;
+}
+
+.bill:not(:last-of-type):after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    width: 100%;
+    height: 0;
+    
+    transform: translateX(-50%);
+    
+    border-bottom: gray solid 1px;
+}
+
+.bill-content-left {
+    display: inline-block;
+    width: 29%;
+    height: 100%;
+}
+
+.bill-printno {
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+
+.bill-year {
+    font-family: "Roboto Slab", serif;
+    font-size: 14px;
+    color: black;
+    
+    margin-top: 10px;
+}
+
+.bill-rating, .bill-rating-prefix {
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #393939;
+    
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+.bill-rating-prefix {
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.bill-content-right {
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+}
+
+.bill-title {
+    position: relative;
+    max-height: 50px;
+    overflow: hidden;
+    
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: black;
+    
+    margin-top: 10px;
+}
+
+.bill-summary {
+    position: relative;
+    height: 57px;
+    overflow: hidden;
+    
+    font-family: "Roboto Slab", serif;
+    font-size: 14px;
+    color: #7c7c7c;
+    font-style: italic;
+    
+    margin-top: 20px;
+}
+
+.bill-title:after, .bill-summary:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1.2em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #f5f5f5 100%);
+}
+
+.bill-title:after {
+    top: 30px;
+}
+
+
+
+#main-content > ul .no-results {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+#main-content > ul .no-results.show {
+    display: flex;
+}
+
+#main-content > ul .no-results p {
+    font-family: "Roboto Slab", serif;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+
+
+
+#main-content > ul .preloader {
+    display: none;
+    width: 500px;
+    height: 200px;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin: auto;
+}
+
+#main-content > ul .preloader svg {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display:inline-block;
+}
+
+#main-content > ul.loading .preloader {
+    display: flex;
+}
+
+#main-content > ul .preloader p {
+    display: none;
+    font-family: "Roboto Slab", serif;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+#main-content > ul .preloader p.show {
+    display: block;
+}
+
+#main-content > ul > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin: 20px auto;
+    padding: 10px;
+    
+    background-color: aliceblue;
+    border: solid 1px #b5d2eb;
+    border-radius: 5px;
+    
+    transition: transform ease 0.2s;
+}
+
+#main-content > ul > button.invisible {
+    display: none;
+}
+
+#main-content > ul > button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#main-content > ul > button p {
+    font-family: "Roboto Slab", serif;
+    font-size: 16px;
+    color: #797979;
+}

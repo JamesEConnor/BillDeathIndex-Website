@@ -1,0 +1,63 @@
+#bill {
+    width: 100%;
+    height: calc(100vh - 80px - 80px);
+    
+    padding: 40px 10px;
+    overflow-y: auto;
+}
+
+.bill-result-title {
+    width: calc(100% - 50px);
+    
+    font-family: "Roboto Slab", serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.bill-result-descriptions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.bill-result-descriptors li {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 0 20px;
+}
+
+.bill-result-descriptors li:not(:last-of-type) {
+    border-right: black 1px solid;
+}
+
+.bill-result-descriptors li p {
+    font-family: "Roboto Slab", serif;
+    font-size: 14px;
+    color: black;
+    line-height: 20px;
+}
+
+.bill-result-signed, .bill-result-adopted, .bill-result-vetoed {
+    font-style: italic;
+}
+
+.bill-result-textparent {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: calc(100% - 50px);
+    
+    border-top: 2px solid black;
+    margin-top: 10px;
+    padding-top: 20px;
+}
+
+.bill-result-text {
+    font-family: monospace, serif;
+    font-size: 14px;
+    color: black;
+    line-height: 18px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FAQ - Bill Death Index</title>        
+        
+        <link rel="icon" href="images/no-results.png">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/faq.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html" class="logo"><h1>Bill Death Index</h1></a>
+        </nav>
+        
+            <ul class="questions">
+                <h2>FAQ</h2>
+                <li>
+                    <h3><span class="arrow"></span>What is the Bill Death Index?</h3>
+                    <p style="display: none;">In the U.S. legislative system, bills can "die in committee". This occurs when a bill is either voted down in a committee or it simply never receives a vote. While the former is easy to track, the latter is not publicized as much. That, coupled with other means of bill deaths such as a pocket veto or it simply being lost in the process, means that solid legislation with large support can be lost. This project is an attempt to keep track of these bills, as well as the various "levels of death" that they're at.</p>
+                </li>
+                <li>
+                    <h3><span class="arrow"></span>What do the different levels of death mean?</h3>
+                    <p style="display: none;">There are four different levels of death, as described below.
+                    <br /><br />
+                    Mostly Dead (Low): This represents a bill that is dead, but only a bit. This occurs when a bill is inactive for a year, but has previously been approved by a chamber or committee. That means that it has support, but it simply got lost along the way.
+                    <br /><br />
+                    Flatlining (Moderate): This represents a slightly more significant bill death, but it's similar to the 'Mostly Dead' level. It occurs when a bill has been inactive for at least a year and was referred back to a committee. This is the traditional death in committee, in which a bill dies simply because it's not voted on in committee.
+                    <br /><br />
+                    Clinical (High): This level is a more significant level of death, representing a veto by the governor. Vetoes in any legislative system can take two forms: direct or pocket vetoes. If a directly vetoed bill remains inactive for a year after being vetoed, it gains this rating. If a bill is sent to a governor, but stays inactive for at least thirty days, it's considered pocket vetoed and is given this rating as well.
+                    <br /><br />
+                    Six Feet Under (Severe): This is the highest level of death, and represents a likely poor fate for the bill. For a bill to receive this rating, it must meet all of the conditions of the flatlining (moderate) level, or the traditional death in committee (it must have been referred back to a committee and been inactive for four months). However, it must all additionally have lost its original supporters. When cosponsors of a bill leave office, their support is lost for certain bills. When a majority of cosponsors of a bill leave office and the bill is inactive for a year, it gains this rating so long as it meets the moderate conditions. If all of the bill's cosponsors have left office, the requirement of a year of inactivity is lost.
+                    </p>
+                </li>
+                <li>
+                    <h3><span class="arrow"></span>What inspired this project's creation?</h3>
+                    <p style="display: none;">In doing some research on New York State legislation, I came across NYS Senate bill S1452. This bill, regarding the custody rights of sex offenders, seemed to make perfect sense to me. But it was lost after its proposal in 2013 when it was referred to a House committee and almost all of its cosponsors subseqently left office. That's when it occurred to me how many of these stories must exist. So I decided to go looking and found a significant number of bills.</p>
+                </li>
+                <li>
+                    <h3><span class="arrow"></span>How does it work?</h3>
+                    <p style="display: none;">A separate program was written to crawl through APIs of legislative bodies (originally the NYS Senate OpenLegislation API). These are then stored to JSON files. Then, these JSON files are imported into a Google Firebase Realtime Database, which allows for quick searching while handling most of the backend itself.</p>
+                </li>
+            </ul>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/faq.js"></script>
+</html>
