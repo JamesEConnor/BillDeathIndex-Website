@@ -31,7 +31,7 @@ function addBill(data, skipFirst, count, hideLoadButton=false) {
         
         var entity = findGetParameter("entity");
         
-        var newBill = `<li class="bill ${deathLevel}"><div class="bill-content-left"><a href="bill.html?bill=${printNo}&entity=${entity}"><h2 class="bill-printno">Bill ${printNo}</h2><h2 class="bill-year">${year}</h2></a><h3 class="bill-rating-prefix">Death Rating</h3><h3 class="bill-rating clinical">${deathLevelLabel}</h3></div><div class="bill-content-right"><a href="bill.html?bill=${printNo}&entity=${entity}"><h3 class="bill-title">${title}</h3><p class="bill-summary">${summary}</p></a></div></li>`;
+        var newBill = `<li class="bill ${deathLevel}"><div class="bill-content-left"><a href="bill.html?bill=${printNo.toString() + year.toString()}&entity=${entity}"><h2 class="bill-printno">Bill ${printNo}</h2><h2 class="bill-year">${year}</h2></a><h3 class="bill-rating-prefix">Death Rating</h3><h3 class="bill-rating clinical">${deathLevelLabel}</h3></div><div class="bill-content-right"><a href="bill.html?bill=${printNo.toString() + year.toString()}&entity=${entity}"><h3 class="bill-title">${title}</h3><p class="bill-summary">${summary}</p></a></div></li>`;
                 
         $(newBill).insertBefore($("ul > .preloader"));
         
